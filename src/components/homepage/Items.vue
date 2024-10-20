@@ -3,9 +3,9 @@ import { ref } from 'vue'
 import ItemsCard from '../ItemsCard.vue';
 
 const items = ref([
-    {id: 1, title:'RoboCrypto App', subTitle:'Mobile UI Kit', image:'items-1.jpg'},
+    {id: 1, title:'RoboTrading App', subTitle:'Mobile UI Kit', image:'items-1.jpg'},
     {id: 2, title:'Online Doctor Consultation', subTitle:'Website UI Kit', image:'items-2.jpg'},
-    {id: 3, title:'Banking Crypto', subTitle:'Mobile UI Kit', image:'items-3.jpg'},
+    {id: 3, title:'Banking App', subTitle:'Mobile UI Kit', image:'items-3.jpg'},
 ])
 </script>
 <template>
