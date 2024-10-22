@@ -1,11 +1,16 @@
 <script setup>
-import { ref } from 'vue'
+import { ref } from 'vue';
 import { RouterLink } from 'vue-router';
+import axios from 'axios';
 
 const form = ref({
     'email':'',
     'password':'',
 })
+
+async function login(){
+    
+}
 </script>
 
 <template>

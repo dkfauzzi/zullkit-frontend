@@ -17,5 +17,4 @@ import LoginForm from '@/components/authentication/LoginForm.vue'
             </div>
         </div>
     </div>
-
 </template>
