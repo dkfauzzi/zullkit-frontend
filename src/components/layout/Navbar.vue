@@ -8,7 +8,7 @@ import UserInfo from './UserInfo.vue'
 import AuthButton from './AuthButton.vue'
 
 const userStore = useUserStore()
-const user = computed(() => userStore.user)
+const user = computed(() => userStore.getUser)
 const isLoggedIn = computed(() => userStore.isLoggedIn)
 
 onMounted(() =>{

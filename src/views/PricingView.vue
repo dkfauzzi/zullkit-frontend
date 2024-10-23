@@ -3,6 +3,28 @@ import Costumizable from '@/components/authentication/features/Costumizable.vue'
 import Fortune from '@/components/authentication/features/Fortune.vue';
 import Documentation from '@/components/authentication/features/Documentation.vue';
 import { RouterLink } from 'vue-router';
+
+import axios from 'axios';
+
+async function checkout(price) {
+  try {
+    const response = await axios.post('http://127.0.0.1:8000/api/checkout', {
+      payment_total: price,
+      payment_status: 'PENDING'
+    }, 
+    {
+      headers: {
+        Authorization: localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token')
+      }
+    })
+    // window.location.href = response.data.data.payment_url
+    window.open(response.data.data.payment_url, '_blank');
+
+  } catch (error) {
+    console.error(error);
+  }
+}
+
 </script>
 <template>
   <main>
@@ -54,10 +76,10 @@ import { RouterLink } from 'vue-router';
 
                     </li>
                   </ul>
-                  <RouterLink to="/success"
+                  <Button @click="checkout(2000)"
                     class="inline-flex items-center justify-center w-full px-8 py-3 text-base font-medium text-black bg-gray-200 border border-transparent rounded-full hover:bg-gray-300 md:py-2 md:text-md md:px-10 hover:shadow">
                     Checkout Now
-                  </RouterLink>
+                  </Button>
                 </div>
               </div>
               <div>
@@ -114,10 +136,10 @@ import { RouterLink } from 'vue-router';
 
                     </li>
                   </ul>
-                  <RouterLink to="/success"
+                  <Button @click="checkout(9000)"
                     class="inline-flex items-center justify-center w-full px-8 py-3 text-base font-medium text-white bg-indigo-600 border border-transparent rounded-full hover:bg-indigo-700 md:py-2 md:text-md md:px-10 hover:shadow">
                     Checkout Now
-                  </RouterLink>
+                  </Button>
                 </div>
               </div>
             </div>
