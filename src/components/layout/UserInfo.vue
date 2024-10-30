@@ -8,18 +8,20 @@ const props = defineProps({
     user: Object,
 });
 
-// const show = ref(false);
+const show = ref(false);
 
-// function toggleDropdown() {
-//     show.value = !show.value;
-// }
+function toggleDropdown() {
+    
+  show.value = !show.value;
+}
+function logout() {
 
-// function logout() {
-//     localStorage.clear("access_token");
-//     localStorage.clear("token_type");
+  localStorage.clear("access_token");
 
-//     router.push("/login");
-// }
+  localStorage.clear("token_type");
+
+  router.push("/login");
+}
 </script>
 
 <template>
